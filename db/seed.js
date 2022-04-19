@@ -36,13 +36,11 @@ async function dropTables() {
 
   async function createInitialClassList(){
       try{
-          console.log("Starting to create class lists");
-
-          const first = await createClassList({ class1: 'french', class2: 'calculus', class3: 'social studies'});
-            
-          console.log(first);
-
-          console.log("Finished creating class lists");
+            console.log("Starting to create class lists");
+            await createClassList({ class1: 'french', class2: 'calculus', class3: 'social studies'});
+            await createClassList({ class1: 'phYsical Education', class2: 'CalcUlus', class3: 'computer Science'});
+            await createClassList({ class1: 'CALCULUS', class2: 'Biology 101', class3: 'World History'});
+            console.log("Finished creating class lists");
       } catch (error){
           console.error("Error Creating Lists");
           throw error;
@@ -55,7 +53,7 @@ async function dropTables() {
   
       await dropTables();
       await createTables();
-      createInitialClassList();
+      await createInitialClassList();
     } catch (error) {
       throw error;
     }
